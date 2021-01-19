@@ -30,7 +30,7 @@
 #   sudo docker build -t spiderfoot-test --build-arg REQUIREMENTS=requirements_test.txt .
 #   sudo docker run --rm spiderfoot-test -m pytest --flake8 .
 
-FROM alpine:3.9.6
+FROM alpine:3.9.6 As build
 ARG REQUIREMENTS=requirements.txt
 RUN apk add --no-cache gcc git curl python3 python3-dev py3-pip swig tinyxml-dev \
  python3-dev musl-dev openssl-dev libffi-dev libxslt-dev libxml2-dev jpeg-dev \
